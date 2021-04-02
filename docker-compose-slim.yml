@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  #
+  # External Services
+  #
+  db:
+    image: postgres:13
+    restart: on-failure
+
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+      # allows us to dump the database somewhere e.g.:
+      # pg_dump -U $POSTGRES_USER -F t $POSTGRES_DB > /backups/$POSTGRES_DB-$(date +%Y-%m-%d).tar'
+      - ./db/dumps:/backups
+
+    environment:
+      - POSTGRES_PASSWORD=letmein
+      - POSTGRES_USER=myuser
+      - POSTGRES_DB=appdb
+
+    ports:
+      # note that we're mapping port 5432 here directly.
+      # please ensure that your databae.yml file is configured to connect to
+      # localhost:5432. The default is a unix domain socket that that will not work here.
+      - '5432:5432'
+
+volumes:  
+  pg_data:
