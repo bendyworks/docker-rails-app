@@ -10,7 +10,7 @@ Install the example env files:
 
 ```
 DATABASE_URL="postgres://myuser:letmein@db/appdb"
-BUNDLE_PATH=/bundle/**vendor**
+BUNDLE_PATH=/bundle/vendor
 ```
 
 - `docker-compose up --build`
