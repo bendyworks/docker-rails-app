@@ -1,6 +1,6 @@
 # README
 
-This is a companion repo to the Wrangling Complex Rails apps with Docker.
+This is a companion repo to the Wrangling Complex Rails apps with Docker blog series.
 
 In order to run this app:
 
