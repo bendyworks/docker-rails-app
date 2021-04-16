@@ -30,5 +30,7 @@ end
 group :test do
   gem 'capybara', '>= 3.26'
   gem 'selenium-webdriver'
+  gem 'rexml'
   gem 'webdrivers'
 end
+gem "rspec", "~> 3.10", :group => :test

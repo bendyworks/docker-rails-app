@@ -107,6 +107,7 @@ services:
   #
   test:
     image: appimage
+    env_file: .env.docker.test
 
     # This does two things... Allows our test container to be persistent, and loads the test boilerplate
     # for faster test runs. You need the "spring-commands-rspec" installed in order to make this work (assuming you're using rspec)
