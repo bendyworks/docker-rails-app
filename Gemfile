@@ -34,3 +34,5 @@ group :test do
   gem 'webdrivers'
 end
 gem "rspec", "~> 3.10", :group => :test
+
+gem "bundler-audit", "~> 0.8.0"
