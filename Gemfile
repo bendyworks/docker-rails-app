@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.0'
 
-gem 'rails', '~> 6.1.1'
+gem 'rails', '~> 6.1.4'
 gem 'puma', '~> 5.0'
 gem 'sass-rails', '>= 6'
 gem 'webpacker', '~> 5.0'
@@ -16,8 +16,11 @@ gem 'bootsnap', '>= 1.4.4', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'dotenv-rails'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'capybara'
+  gem 'dotenv-rails'
+  gem 'rspec-rails'
+  gem 'webdrivers'
 end
 
 group :development do
@@ -28,11 +31,8 @@ group :development do
 end
 
 group :test do
-  gem 'capybara', '>= 3.26'
   gem 'selenium-webdriver'
   gem 'rexml'
-  gem 'webdrivers'
 end
-gem "rspec", "~> 3.10", :group => :test
 
 gem "bundler-audit", "~> 0.8.0"
