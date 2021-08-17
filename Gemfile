@@ -4,6 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.0.0'
 
 gem 'rails', '~> 6.1.4'
+gem 'rake'
 gem 'puma', '~> 5.0'
 gem 'sass-rails', '>= 6'
 gem 'webpacker', '~> 5.0'
@@ -20,6 +21,7 @@ group :development, :test do
   gem 'capybara'
   gem 'dotenv-rails'
   gem 'rspec-rails'
+  gem 'spring-commands-rspec'
   gem 'webdrivers'
 end
 
@@ -31,7 +33,6 @@ group :development do
 end
 
 group :test do
-  gem 'selenium-webdriver'
   gem 'rexml'
 end
 
