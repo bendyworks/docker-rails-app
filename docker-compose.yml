@@ -113,6 +113,9 @@ services:
     # for faster test runs. You need the "spring-commands-rspec" installed in order to make this work (assuming you're using rspec)
     command: bin/spring server
 
+    environment:
+      - SELENIUM_REMOTE_HOST=selenium
+
     # This is a different env file, for testing only.
     env_file: .env.docker.test
 
@@ -121,6 +124,17 @@ services:
       - backend
 
     <<: *volumes
+
+  selenium:
+    image: selenium/standalone-chrome
+    environment:
+      - VNC_NO_PASSWORD=1
+    networks:
+      - backend
+    ports:
+      - '4444:4444'
+      - '5900:5900'
+
 
 # Our network declarations, used in
 networks:
