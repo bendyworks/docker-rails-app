@@ -22,7 +22,7 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'rspec-rails'
   gem 'spring-commands-rspec'
-  gem 'webdrivers'
+  gem 'selenium-webdriver', '4.0.0.beta4'
 end
 
 group :development do
